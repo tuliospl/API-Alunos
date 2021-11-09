@@ -1,0 +1,23 @@
+type Aluno {
+  _id: ID!
+  name: String!
+  CPF: String!
+  email: String!
+}
+
+input AlunoInput {
+  name: String!
+  CPF: String!
+  email: String!
+}
+
+type Query {
+  alunos: [Aluno!]!
+  aluno(id:ID!): Aluno!
+}
+
+type Mutation {
+  createAluno(data: AlunoInput): Aluno!
+  updateAluno(id: ID!, data: AlunoInput): Aluno!
+  deleteAluno(id: ID!): Boolean!
+}
